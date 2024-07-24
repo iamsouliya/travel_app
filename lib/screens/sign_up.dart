@@ -32,7 +32,7 @@ class _SignUpState extends State<SignUp> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const Text(
-                        'Travel in Lao',
+                        'Welcome to Travel App',
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,

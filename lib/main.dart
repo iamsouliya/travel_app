@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/about.dart';
+import 'package:travel_app/screens/bookmark.dart';
 import 'package:travel_app/screens/home.dart';
 import 'package:travel_app/screens/setting.dart';
 
@@ -39,12 +41,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = const [
-    Home(),
-    Icon(Icons.bookmark),
-    Icon(Icons.person),
-    Icon(Icons.notifications),
-    Settting(),
+  final List<Widget> _pages = [
+    const Home(),
+    const Bookmark(),
+    About(),
+    const Settting(),
   ];
 
   @override
@@ -74,12 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: "Bookmarks",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: "Notifications",
+            icon: Icon(Icons.info),
+            label: "About",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),

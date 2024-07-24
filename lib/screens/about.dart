@@ -2,46 +2,94 @@ import 'package:flutter/material.dart';
 
 class About extends StatelessWidget {
   About({super.key});
-
   final List<Developer> developers = [
     Developer(
-      name: 'Souliya Thammavong',
-      role: 'Project Lead & Senior Developer',
-      imageUrl: 'https://example.com/alice.jpg',
+      name: 'ທ້າວ ສຸລິຍາ ທຳມະວົງ',
+      role: 'Project Lead & Developer',
+      imageUrl: 'assets/images/members/noy.jpeg',
     ),
     Developer(
-      name: 'Tavanh Lardsachan',
-      role: 'UI/UX Designer',
-      imageUrl: 'https://example.com/bob.jpg',
+      name: 'ນາງ ຕາວັນ ລາດຊະຈັນ',
+      role: 'UX/UI Designer',
+      imageUrl: 'assets/images/members/tavanh.jpeg',
     ),
     Developer(
-      name: 'Souksakhone Sengaloun',
-      role: 'UI/UX Designer',
-      imageUrl: 'https://example.com/carol.jpg',
+      name: 'ທ້າວ ສຸກສາຄອນ ແສງອະລຸນ',
+      role: 'UX/UI Designer',
+      imageUrl: 'assets/images/members/souk.jpeg',
     ),
     Developer(
-      name: 'Sitthiphone Sonethongkham',
-      role: 'Backend Developer',
-      imageUrl: 'https://example.com/david.jpg',
+      name: 'ທ້າວ ສິດທິພອນ ສອນທອງຄຳ',
+      role: 'Information Finder',
+      imageUrl: 'assets/images/members/note.jpeg',
     ),
     Developer(
-      name: 'Sipunya Phonepaseuth',
-      role: 'QA Engineer',
-      imageUrl: 'https://example.com/eva.jpg',
+      name: 'ທ້າວ ສີປັນຍາ ພອນປະເສິດ',
+      role: 'Information Finder',
+      imageUrl: 'assets/images/members/cola.jpeg',
     ),
   ];
 
+  final _aboutApp =
+      'ແອັບພິເຄຊັ້ນນິ້ເປັນແອັບທີ່ກ່ຽວກັບການແນະນຳສະຖານທີ່ທ່ອງທ່ຽວຕ່າງໆໃນສປປ ລາວ';
+  final _teacherName = 'ອຈ ປອ ສະຫວາດ ໄຊປະດີດ';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('About Our Team'),
+        title: const Text('About'),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: ListView.builder(
-        itemCount: developers.length,
-        itemBuilder: (context, index) {
-          return DeveloperCard(developer: developers[index]);
-        },
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Teacher',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                CircleAvatar(
+                  radius: 40,
+                  backgroundImage:
+                      Image.asset('assets/images/teacher_savath_pic.jpg').image,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  _teacherName,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'About App',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            Text(_aboutApp),
+            const SizedBox(height: 16),
+            const Text(
+              'Group Members',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: developers.length,
+              itemBuilder: (context, index) {
+                return DeveloperCard(developer: developers[index]);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -63,14 +111,14 @@ class DeveloperCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.all(8.0),
+      margin: const EdgeInsets.symmetric(vertical: 8),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(
           children: [
             CircleAvatar(
               radius: 30,
-              backgroundImage: NetworkImage(developer.imageUrl),
+              backgroundImage: Image.asset(developer.imageUrl).image,
             ),
             const SizedBox(width: 16),
             Expanded(
