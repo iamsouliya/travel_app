@@ -31,8 +31,8 @@ class About extends StatelessWidget {
   ];
 
   final _aboutApp =
-      'ແອັບພິເຄຊັ້ນນິ້ເປັນແອັບທີ່ກ່ຽວກັບການແນະນຳສະຖານທີ່ທ່ອງທ່ຽວຕ່າງໆໃນສປປ ລາວ';
-  final _teacherName = 'ອຈ ປອ ສະຫວາດ ໄຊປະດີດ';
+      'WanderLens ເປັນແອັບທີ່ກ່ຽວກັບການແນະນຳສະຖານທີ່ທ່ອງທ່ຽວຕ່າງໆບໍ່ວ່າຈະເປັນພາຍໃນລາວ ແລະ ຕ່າງປະເທດ';
+  final _teacherName = 'ປອ ອຈ ສະຫວາດ ໄຊປະດີດ';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
